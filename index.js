@@ -1037,7 +1037,7 @@ Info: *bold* hash is Locked
                 }
             }
             break
-			case 'anticall': {
+			case 'المكالمات': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (args[0] === "on") {
                     if (global.anticall === true) return reply(lang.OnBef())
@@ -1051,13 +1051,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(m.chat, 'Mode Anticall', `© ${ownername}`, [{
                         buttonId: '.anticall on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.anticall off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1134,7 +1134,7 @@ Info: *bold* hash is Locked
                 reply(lang.OkUnBanC())
                 break
             case 'banchat':
-            case 'banchats':
+            case 'بان':
             case 'mute':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
@@ -1153,13 +1153,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(from, 'Mode Mute', `© ${ownername}`, [{
                         buttonId: '.mute on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.mute off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1167,7 +1167,7 @@ Info: *bold* hash is Locked
                     })
                 }
                 break
-            case 'nsfw':
+            case 'الاباحي':
                 if (!isGroupAdmins && !isGroupOwner && !m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].nsfw) return reply(lang.OnBef())
@@ -1181,13 +1181,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(from, 'Mode Nfsw', `© ${ownername}`, [{
                         buttonId: '.nsfw on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.nsfw off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1195,7 +1195,7 @@ Info: *bold* hash is Locked
                     })
                 }
                 break
-            case 'antilink':
+            case 'الروابط': case 'antilink':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
@@ -1214,13 +1214,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{
                         buttonId: '.antilink on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.antilink off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1465,7 +1465,7 @@ Info: *bold* hash is Locked
             break
             case 'cekwelcome': {
                 if (!m.isGroup) return reply(lang.groupOnly())
-                defaultwel = `*Welcome to @group*\n\n📛 : _@user_\n🔢 : _@number_\n💌 : _@bio_\n🏅 : _@members Members_\n📆 : _@day, @date_\n⏰ : _@time Asia/Jakarta_`
+                defaultwel = `*مرحبا بك في @group*\n\nالاسم : _@user_\nالرقم : _@number_\n💌 : _@bio_\nعدد الاعضاء : _@members Members_\nالتاريخ📆 : _@day, @date_\nالوقت⏰ : _@time Asia/Jakarta_`
                 textwel = (db.data.chats[m.chat].setWelcome || defaultwel)
                 reply('Text welcome in group ' + groupName + `\n\n` + textwel)
             }
@@ -1528,7 +1528,7 @@ Info: *bold* hash is Locked
 
             }
             break
-            case 'welcome':
+            case 'الترحيب': case 'welcome':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
                 if (args[0] === "on") {
@@ -1543,13 +1543,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(from, 'Mode Welcome Msg', `© ${ownername}`, [{
                         buttonId: '.welcome on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.welcome off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1558,7 +1558,7 @@ Info: *bold* hash is Locked
                 }
                 break
             case 'goodbye':
-            case 'left':
+            case 'المغادره':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
                 if (args[0] === "on") {
@@ -1573,13 +1573,13 @@ Info: *bold* hash is Locked
                     alpha.sendButMessage(from, 'Mode Goodbye Msg', `© ${ownername}`, [{
                         buttonId: '.left on',
                         buttonText: {
-                            displayText: 'ON'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.left off',
                         buttonText: {
-                            displayText: 'OFF'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -1589,7 +1589,7 @@ Info: *bold* hash is Locked
                 break
             case 'linkgroup':
             case 'linkgrup':
-            case 'linkgc': {
+            case 'لينك': {
                 if (!m.isGroup) return reply(lang.groupOnly())
                 let response = await alpha.groupInviteCode(m.chat)
                 alpha.sendText(m.chat, `Link Group : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, {
@@ -1597,8 +1597,8 @@ Info: *bold* hash is Locked
                 })
             }
             break
-            case 'd':
-            case 'delete':
+            case 'حذف':
+            case 'مسح':
             case 'del': {
                 if (!m.isGroup) {
                     if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
@@ -1707,7 +1707,7 @@ Info: *bold* hash is Locked
                         }, {
                             buttonId: '.profile',
                             buttonText: {
-                                displayText: 'Profile 👤'
+                                displayText: 'بروفايل 👤'
                             },
                             type: 1
                         }], indonesia.RegReg(cryptoRandomString(20), tanggal(new Date()), namax.slice(0, 1).toUpperCase() + namax.slice(1), umurx, genderx.slice(0, 1).toUpperCase() + genderx.slice(1), m.sender.split('@')[0], prefix, prefix, Object.keys(global.db.data.users).length), `© ${ownername}`, [m.sender], {
@@ -1723,7 +1723,7 @@ Info: *bold* hash is Locked
                         }, {
                             buttonId: '.profile',
                             buttonText: {
-                                displayText: 'Profile 👤'
+                                displayText: 'بروفايل 👤'
                             },
                             type: 1
                         }], english.RegReg(cryptoRandomString(20), tanggal_(new Date()), namax.slice(0, 1).toUpperCase() + namax.slice(1), umurx, genderx.slice(0, 1).toUpperCase() + genderx.slice(1), m.sender.split('@')[0], prefix, prefix, Object.keys(global.db.data.users).length), `© ${ownername}`, [m.sender], {
@@ -1835,7 +1835,7 @@ Info: *bold* hash is Locked
 
             }
             break
-            case 'procfile':
+            case 'بروفايل':
             case 'profile': {
                 try {
                     ppnu = await alpha.profilePictureUrl(m.sender, 'image')
@@ -2073,20 +2073,20 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'runtime':
                 reply(`Runtime : ${runtime(process.uptime())}`)
                 break
-            case 'public': {
+            case 'public': case 'عام': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = true
                 reply(lang.BotPublic())
             }
             break
-            case 'self': {
+            case 'self': case 'خاص': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 alpha.public = false
                 reply(lang.BotSelf())
             }
             break
             case 'owner':
-            case 'creator': {
+            case 'المطور': {
                 sendContact(alpha, m.chat, global.owner, m)
             }
             break
@@ -2114,7 +2114,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 alpha.sendButMessage(m.chat, lang.ok() + ' ' + command + '\n\n' + text, `© ${ownername}`, [{
                     buttonId: '.menu',
                     buttonText: {
-                        displayText: 'Menu'
+                        displayText: 'القائمه'
                     },
                     type: 1
                 }], {
@@ -2123,7 +2123,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'donasi':
-            case 'donate': {
+            case 'الدعم': {
                 await alpha.sendMessage(m.chat, {
                     image: qris,
                     caption: lang.tos(ownernomer)
@@ -2193,11 +2193,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 db.data.users[m.sender].limit -= 1
             }
             break
-            case 'sgif':
-            case 'stikerin':
+            case 'ستيكر':
+            case 'استيكر':
             case 's':
-            case 'sticker':
-            case 'stiker': {
+            case 'ملصق':
+            case 'sticker': {
                 if (db.data.settings[botNumber].userRegister && !db.data.users[m.sender].registered) return alpha.send2ButMes(m.chat, `🇮🇩 _Hi @${m.sender.split('@')[0]} silahkan verifikasi terlebih dahulu sebelum memakai fitur bot_${enter}${enter}🇺🇸 _Hi @${m.sender.split('@')[0]} please verify first before using the bot feature_`, `© ${ownername}`, `.daftar ` + pushname, `🇺🇸 Verify`, `.daftar ` + pushname, 'Daftar 🇮🇩', fkontak, [m.sender])
                 if (db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
                 if (!quoted) return reply(lang.NoToStik(prefix, command))
@@ -2410,7 +2410,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         await sendButLoc(alpha, m.chat, txt, '©' + ownername, gam, [{
                             buttonId: `.menu`,
                             buttonText: {
-                                displayText: 'Menu'
+                                displayText: 'القائمه'
                             },
                             type: 1
                         }], {
@@ -2445,7 +2445,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         await sendButLoc(alpha, m.chat, txt, '©' + ownername, gam, [{
                             buttonId: `.menu`,
                             buttonText: {
-                                displayText: 'Menu'
+                                displayText: 'القائمه'
                             },
                             type: 1
                         }], {
@@ -2478,7 +2478,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     await sendButLoc(alpha, m.chat, txt, '©' + ownername, gam, [{
                         buttonId: `.menu`,
                         buttonText: {
-                            displayText: 'Menu'
+                            displayText: 'القائمه'
                         },
                         type: 1
                     }], {
@@ -2614,7 +2614,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
 
-            case 'join': {
+            case 'join': case 'انضم': case 'ادخل': {
                 if (!isCreator) return reply(lang.ownerOnly())
                 if (!text) return reply(lang.JoinGc())
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
@@ -2624,10 +2624,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'tagall':
-            case 'infoall':
+            case 'منشن':
+            case 'تاك':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
-                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
+                let tekss = `══✪〘 *👥 منشن للكل* 〙✪══\n\n➲ *الرساله : ${q ? q : 'لا توجد رساله'}*\n\n`
                 for (let mem of participants) {
                     tekss += `🏅 @${mem.id.split('@')[0]}\n`
                 }
@@ -2639,7 +2640,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     quoted: fkontak
                 })
                 break
-            case 'hidetag':
+            case 'hidetag': case 'مخفي': case 'وهمي':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
                 alpha.sendMessage(from, {
@@ -2650,7 +2651,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 })
                 break
             case 'banuser':
-            case 'banned': {
+            case 'حظر': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!m.quoted && !text) return reply(lang.NoTagBan(prefix, command))
                 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
@@ -2663,7 +2664,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             break
             case 'unbanuser':
             case 'unban':
-            case 'unbanned': {
+            case 'الغاء': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!m.quoted && !text) return reply(lang.NoTagBan(prefix, command))
                 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
@@ -2672,21 +2673,21 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 reply(lang.ok())
             }
             break
-            case 'block': {
+            case 'block': case 'بلوك': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!m.quoted && !text) return reply(lang.NoTagBan(prefix, command))
                 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
                 await alpha.updateBlockStatus(users, 'block').then((res) => m.reply(lang.ok())).catch((err) => m.reply(lang.err()))
             }
             break
-            case 'unblock': {
+            case 'فك-البلوك': {
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
                 if (!m.quoted && !text) return reply(lang.NoTagBan(prefix, command))
                 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
                 await alpha.updateBlockStatus(users, 'unblock').then((res) => m.reply(lang.ok())).catch((err) => m.reply(lang.err()))
             }
             break
-            case 'kick': {
+            case 'kick': case 'طرد': {
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
@@ -2695,7 +2696,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(lang.ok())).catch((err) => m.reply(lang.err()))
             }
             break
-            case 'add': {
+            case 'add': case 'اضافه': case 'ضيف': {
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
@@ -2704,7 +2705,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(lang.ok())).catch((err) => m.reply(lang.err()))
             }
             break
-            case 'promote': {
+            case 'promote': case 'رفع': case 'ارفع': {
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
@@ -2713,7 +2714,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(lang.ok())).catch((err) => m.reply(lang.err()))
             }
             break
-            case 'demote': {
+            case 'demote': case 'تنزيل': case 'نزل': {
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
@@ -2735,7 +2736,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 reply('Bye 👋').then(async res => await alpha.groupLeave(m.chat))
                 break
             case 'group':
-            case 'grup':
+            case 'جروب':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
                 if (!(isGroupAdmins || isGroupOwner)) return reply(lang.adminOnly())
@@ -2749,13 +2750,13 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{
                         buttonId: '.group open',
                         buttonText: {
-                            displayText: 'Open'
+                            displayText: 'فتح'
                         },
                         type: 1
                     }, {
                         buttonId: '.group close',
                         buttonText: {
-                            displayText: 'Close'
+                            displayText: 'قفل'
                         },
                         type: 1
                     }], {
@@ -2847,8 +2848,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 }
             }
             break
-            case 'help':
-            case 'panel':
+            case 'اوامر':
+            case 'القائمه':
             case 'menu': {
                 try {
                     hit_total = await fetchJson('https://api.countapi.xyz/hit/api-alphabot.herokuapp.com/visits')
@@ -2890,58 +2891,58 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 }).format(dnew)
 
                 let ownernya = ownernomer + '@s.whatsapp.net'
-                var ini_anu = `Hi ${user.name}
+                var ini_anu = `هاي ${user.name}
 
-╭─❒ 「 Bot Info 」 
-├ Creator :  @${ownernya.split('@')[0]}
-├ Powered  : @${ini_mark.split('@')[0]}
-├ Prefix :   ${prefix}
-├ Total hit : ${hitall}
-├ Speed : ${latensii.toFixed(4)} Second
-├ Memory Used : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ Hostname : ${os.hostname()}
-├ Platform : ${os.platform()}
-├ Private chat : ${(Object.keys(db.data.chats).filter(v => v.endsWith('@s.whatsapp.net')).map(v => v).length)}
-├ Group chat : ${(Object.keys(db.data.chats).filter(v => v.endsWith('@g.us')).map(v => v).length)}
-├ Total chats :  ${(Object.keys(db.data.chats).filter(v => v.endsWith('@s.whatsapp.net')).map(v => v).length) + (Object.keys(db.data.chats).filter(v => v.endsWith('@g.us')).map(v => v).length)} 
-├ User In Database : ${Object.keys(global.db.data.users).length} Users
-├ User Registered : ${(Object.values(global.db.data.users).filter(user => user.registered == true).length)} Users
-├ User Banned : ${(Object.values(global.db.data.users).filter(user => user.banned == true).length)} Users
-├ User Blockir : ${goblock == undefined ? '0' : goblock.length} Users
-╰❒ Runtime : ${runtime(process.uptime())}
+╭─❒ 「 معلومات البوت 」 
+├ رقم المطور :  @${ownernya.split('@')[0]}
+├ المشغل  : @${ini_mark.split('@')[0]}
+├ البادئه :   ${prefix}
+├ مجموع النتائج : ${hitall}
+├ السرعه : ${latensii.toFixed(4)} ثانيه
+├ الذاكره المستخدمه : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}ميجابايت
+├ اسم المضيف : ${os.hostname()}
+├ المنصه : ${os.platform()}
+├ الدردشه الخاصه : ${(Object.keys(db.data.chats).filter(v => v.endsWith('@s.whatsapp.net')).map(v => v).length)}
+├ الدردشه الجماعيه : ${(Object.keys(db.data.chats).filter(v => v.endsWith('@g.us')).map(v => v).length)}
+├ اجمالي الدردشات :  ${(Object.keys(db.data.chats).filter(v => v.endsWith('@s.whatsapp.net')).map(v => v).length) + (Object.keys(db.data.chats).filter(v => v.endsWith('@g.us')).map(v => v).length)} 
+├ مستخدم قاعده البيانات : ${Object.keys(global.db.data.users).length} Users
+├ مستخدم مسجل : ${(Object.values(global.db.data.users).filter(user => user.registered == true).length)} Users
+├ المحظورين : ${(Object.values(global.db.data.users).filter(user => user.banned == true).length)} Users
+├ مستخدم Blockir : ${goblock == undefined ? '0' : goblock.length} Users
+╰❒ مدة العرض : ${runtime(process.uptime())}
 
-╭─❒ 「 Date Info 」 
-├ Masehi : ${week}, ${date}
-├ Hijriah : ${dateIslamic}
+╭─❒ 「 معلومات التاريخ 」 
+├ ميلادي : ${week}, ${date}
+├ هجري : ${dateIslamic}
 ╰❒
 
-╭─❒ 「 User Info 」 
-├ Register: ${user.registered ? `✅\n├ Name : ${user.name}\n├ Age : ${user.age} years\n├ Gender : ${user.gender}\n├ Registered on : ${tanggal(user.regTime)}` : '❌'}
-├ Nomor : @${m.sender.split('@')[0]}
-├ Limit : ${limit} limit
-├ XP : ${exp}
-├ Premium : ${user.premium ? '✅' : '❌'}
-├ Me : ${m.key.fromMe ? 'True' : 'False'}
-╰❒ Owner : ${isCreator ? 'True' : `False`}
+╭─❒ 「 معلومات المستخدم 」 
+├ يسجل: ${user.registered ? `✅\n├ الاسم : ${user.name}\n├ السن : ${user.age} سنه\n├ الجنس : ${user.gender}\n├ مسجل علي : ${tanggal(user.regTime)}` : '❌'}
+├ عدد : @${m.sender.split('@')[0]}
+├ الحد : ${limit} limit
+├ اكس بي : ${exp}
+├ بريميوم : ${user.premium ? '✅' : '❌'}
+├ انا : ${m.key.fromMe ? 'نعم' : 'لا'}
+╰❒ مطور : ${isCreator ? 'نعم' : `لا`}
 `
                 const buttojns = [{
                         buttonId: '.command',
                         buttonText: {
-                            displayText: '📖 List Menu'
+                            displayText: '📖 قائمه الاوامر'
                         },
                         type: 1
                     },
                     {
                         buttonId: '.owner',
                         buttonText: {
-                            displayText: '🙍‍♂️ Owner'
+                            displayText: '🙍‍♂️ المطور'
                         },
                         type: 1
                     },
                     {
                         buttonId: '.donasi',
                         buttonText: {
-                            displayText: '💰 Donation'
+                            displayText: '💰 الدعم'
                         },
                         type: 1
                     }
@@ -2959,14 +2960,14 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     await sendButLoc(alpha, m.chat, lang.menunya(salam, pushname, botname), '©' + ownername, pp_bot, [{
                             buttonId: `.owner`,
                             buttonText: {
-                                displayText: '🙍‍♂️ Owner'
+                                displayText: '🙍‍♂️ المطور'
                             },
                             type: 1
                         },
                         {
                             buttonId: `.donasi`,
                             buttonText: {
-                                displayText: 'Donation 💰'
+                                displayText: 'الدعم 💰'
                             },
                             type: 1
                         }
@@ -2988,12 +2989,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         }
                     }, {
                         "quickReplyButton": {
-                            "displayText": "Donasi",
+                            "displayText": "الدعم",
                             "id": '.donate'
                         }
                     }, {
                         "quickReplyButton": {
-                            "displayText": "Owner",
+                            "displayText": "المطور",
                             "id": '.owner'
                         }
                     }, {
@@ -3016,24 +3017,24 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     })
                 }
                 if (typemenu == 'list') {
-                    sendListMenu(alpha, m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *Name* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `Selamat ${salam} ${pushname} ☺️`, `CLICK HERE`, {
+                    sendListMenu(alpha, m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *الاسم* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : ${ownername}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `سلامات ${salam} ${pushname} ☺️`, `CLICK HERE`, {
                         quoted: fgif
                     })
                 }
             }
             break
-            case 'allmenu': {
-                await sendButLoc(alpha, m.chat, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix), '©' + ownername, pp_bot, [{
+            case 'الاوامر': {
+                await sendButLoc(alpha, m.chat, `هاي kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix), '©' + ownername, pp_bot, [{
                         buttonId: `.owner`,
                         buttonText: {
-                            displayText: '🙍‍♂️ Owner'
+                            displayText: '🙍‍♂️ المطور'
                         },
                         type: 1
                     },
                     {
                         buttonId: `.donasi`,
                         buttonText: {
-                            displayText: 'Donation 💰'
+                            displayText: 'الدعم 💰'
                         },
                         type: 1
                     }
@@ -3048,16 +3049,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3067,16 +3068,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3086,16 +3087,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.rpgmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.rpgmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3106,16 +3107,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.photooxy(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.photooxy(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3125,16 +3126,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.storagemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.storagemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3144,16 +3145,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.voiceChange(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.voiceChange(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3163,16 +3164,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.anonchat(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.anonchat(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3182,16 +3183,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3201,16 +3202,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3220,16 +3221,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3239,16 +3240,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3258,16 +3259,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3277,16 +3278,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3296,16 +3297,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3315,16 +3316,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3334,16 +3335,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3353,16 +3354,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3372,16 +3373,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3391,16 +3392,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3410,16 +3411,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3429,16 +3430,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3448,16 +3449,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3467,16 +3468,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3486,16 +3487,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3505,16 +3506,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3524,16 +3525,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3543,16 +3544,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3562,16 +3563,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3581,16 +3582,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3600,16 +3601,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3619,16 +3620,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
@@ -3638,22 +3639,22 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 sendButImage(alpha, m.chat, sender, [{
                     buttonId: '.command',
                     buttonText: {
-                        displayText: '༺ Back'
+                        displayText: '༺ رجوع'
                     },
                     type: 1
                 }, {
                     buttonId: '.owner',
                     buttonText: {
-                        displayText: 'Owner ༻'
+                        displayText: 'المطور ༻'
                     },
                     type: 1
-                }], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
+                }], `سلامات ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*معلومات البوت*_ 」⬣\n│ *البادئه* :  ${prefix} \n│ *الاسم* : ${botname}\n│ *المطور* : @${ownernomer.split("@")[0]}\n│ *الحاله* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *مده العرض* : ${runtime(process.uptime())}\n│ *ليب* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' + lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {
                     quoted: m
                 })
             }
             break
             case 'take':
-            case 'wm': {
+            case 'سرقه': {
                 if (db.data.settings[botNumber].userRegister && !db.data.users[m.sender].registered) return alpha.send2ButMes(m.chat, `🇮🇩 _Hi @${m.sender.split('@')[0]} silahkan verifikasi terlebih dahulu sebelum memakai fitur bot_${enter}${enter}🇺🇸 _Hi @${m.sender.split('@')[0]} please verify first before using the bot feature_`, `© ${ownername}`, `.daftar ` + pushname, `🇺🇸 Verify`, `.daftar ` + pushname, 'Daftar 🇮🇩', fkontak, [m.sender])
                 if (db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
                 if (!quoted) return reply(lang.NoToStik(prefix, command))
