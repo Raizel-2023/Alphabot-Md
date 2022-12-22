@@ -20,9 +20,9 @@ global.userRegister = false
 global.autoblok212 = false //ubah jadi true biar nmr 212 di blok sama bot
 
 //language
-//Available in indonesia , english & spanyol 
+//Available in arabic , english & spanyol 
 //You can request others language 
-global.language = indonesia  //change indonesia to english if you don't understand the language used by the bot
+global.language = arabic  //change arabic to english if you don't understand the language used by the bot
 
 
 // Other
